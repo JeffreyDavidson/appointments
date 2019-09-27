@@ -15,7 +15,6 @@ export default {
   name: "MainApp",
   data: function() {
     return {
-      title: "Appointments List",
       appointments: []
     };
   },
