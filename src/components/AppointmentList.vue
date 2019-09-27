@@ -6,7 +6,9 @@
           v-for="(item, i) in appointments" 
           v-bind:key="i"
         >
-            <button class="mr-2 btn btn-sm btn-danger"><font-awesome-icon icon="trash"/></button>
+            <button class="mr-2 btn btn-sm btn-danger" @click="$emit('remove', item)">
+                <font-awesome-icon icon="trash"/>
+            </button>
             <div class="w-100">
                 <div class="d-flex justify-content-between">
                     <span class="h4 text-primary">{{item.petName}}</span>
