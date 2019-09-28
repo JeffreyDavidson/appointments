@@ -1,10 +1,10 @@
 <template>
   <div id="main-app" class="container">
     <div class="row justify-content-center">
-      <add-appointment @add="addItem"/>
-      <search-appointments 
-        @searchRecords="searchAppointments" 
-        :myKey="filterKey" 
+      <add-appointment @add="addItem" />
+      <search-appointments
+        @searchRecords="searchAppointments"
+        :myKey="filterKey"
         :myDir="filterDir"
         @requestKey="changeKey"
         @requestDir="changeDir"
@@ -29,7 +29,7 @@ export default {
       filterKey: "petName",
       filterDir: "asc",
       searchTerms: "",
-      aptIndex: 0,
+      aptIndex: 0
     };
   },
   components: {
@@ -38,12 +38,14 @@ export default {
     SearchAppointments
   },
   mounted() {
-    axios.get("./data/appointments.json")
-    .then(response => (this.appointments = response.data.map(item => {
-      item.aptId = this.aptIndex;
-      this.aptIndex++;
-      return item
-    })));
+    axios.get("./data/appointments.json").then(
+      response =>
+        (this.appointments = response.data.map(item => {
+          item.aptId = this.aptIndex;
+          this.aptIndex++;
+          return item;
+        }))
+    );
   },
   computed: {
     searchedApts: function() {
@@ -60,8 +62,9 @@ export default {
         this.searchedApts,
         item => {
           return item[this.filterKey].toLowerCase();
-        }, this.filterDir
-      )
+        },
+        this.filterDir
+      );
     }
   },
   methods: {
