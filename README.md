@@ -1,4 +1,8 @@
-# vue-interface
+# Appointments
+
+This application was created to provide additional experience with working with VueJS. The UI components was established with the front-end framework Bootstrap and allows a veterinarian office a tool for setting up appointments for a client and their pet.
+
+To install this application please folow the tasks below.
 
 ## Project setup
 ```
